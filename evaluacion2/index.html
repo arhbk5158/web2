@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" />
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors" />
+    <meta name="generator" content="Astro v5.7.10" />
+    <title>Carousel Template · Bootstrap v5.3</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/carousel/" />
+    <script src="js/color-modes.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="carousel.css"/>
+    <link rel="stylesheet" href="carousel.rtl.css"/>
+
+
+    <style>
+  #servicios .service-box {
+    background-color: #f8f9fa; /* fondo claro */
+    border: 1px solid #dee2e6; /* borde gris claro */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+    height: 100%; /* opcional para igualar alturas */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* sombra ligera */
+    transition: transform 0.3s ease;
+  }
+
+  #servicios .service-box:hover {
+    transform: translateY(-5px);
+  }
+
+  #servicios h2 {
+    color: #343a40; /* gris oscuro */
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  #servicios p {
+    color: #6c757d; /* gris medio */
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: #0000001a;
+        border: solid rgba(0, 0, 0, 0.15);
+        border-width: 1px 0;
+        box-shadow: inset 0 0.5em 1.5em #0000001a, inset 0 0.125em 0.5em #00000026;
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -0.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .bi {
+        width: 1em;
+        height: 1em;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+      .nosotros{
+        
+      }
+       #estadisticas .stat-box {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    height: 100%;
+  }
+
+  #estadisticas .stat-box:hover {
+    transform: translateY(-5px);
+  }
+
+  #estadisticas h2 {
+    color: #0d6efd; /* celeste Bootstrap */
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  #estadisticas p {
+    color: #6c757d;
+    font-size: 1rem;
+  }
+      
+    </style>
+  </head>
+
+  <body>
+    <!-- SVG Icons -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <!-- symbols omitted for brevity, puedes pegar aquí los que necesites -->
+    </svg>
+
+   
+
+    <!-- Header/Navbar -->
+    <header data-bs-theme="dark">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <img src="resources/logo.png" alt="logo" width="300px">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-md-0"> <!-- Cambiado de me-auto a ms-auto -->
+          <li class="nav-item">
+            <a class="nav-link active" href="#inicio">INICIO</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#nosotros">NOSOTROS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#servicios">SERVICIOS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#contactos">CONTACTO</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    <!-- Main Content -->
+    <main>
+      <!-- Carousel -->
+       <section id="inicio">
+      <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+            aria-label="Slide 1"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+              preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-hidden="true">
+              <image href="resources/nosotros1.jpg"></image>
+              <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
+            </svg>
+            <div class="container">
+              <div class="carousel-caption text-start">
+                <h1>INNOVACIÓN AL SIGUIENTE NIVEL</h1>
+            
+                <p><a class="btn btn-lg btn-primary" href="#">NOSOTROS</a></p>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+</section>
+      
+     
+    </main>
+   <section id="nosotros" class="py-5">
+  <div class="container-fluid">
+    <div class="row align-items-center">
+      <div class="col-md-6 px-5">
+        <h2 class="fw-bold mb-3">Quiénes somos</h2>
+        <p class="lead">Somos una empresa que se dedica a estafar</p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="resources/nosotros1.jpg" alt="Nosotros" class="img-fluid rounded shadow" style="max-width: 90%; height: auto;">
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section id="estadisticas" class="container my-5">
+  <div class="row mb-4">
+    <div class="col-sm-12 text-center">
+      <h2 class="fw-bold">ADAPTÁNDONOS A CADA NECESIDAD</h2>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="stat-box">
+        <h2>+150</h2>
+        <p>Proyectos realizados</p>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="stat-box">
+        <h2>+15</h2>
+        <p>Proyectos en curso</p>
+      </div>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="stat-box">
+        <h2>+2000 horas</h2>
+        <p>
+          Experiencias en Desarrollo <br />
+          y Análisis
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+      <section id="servicios" class="container my-5">
+  <h1 class="text-center mb-4">SERVICIOS</h1>
+
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="service-box">
+        <h2 class="fw-normal">Fábrica de software</h2>
+         <p>
+          Es un modelo de trabajo configurado para <br>
+          soportar y adaptarse a los procesos de cada <br>
+          cliente y su negocio, implementando <br>
+          metodologías ágiles y tradicionales.
+        </p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="service-box">
+        <h2 class="fw-normal">PROYECTOS A MEDIDA</h2>
+        <p>(Llaves en manos)</p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="service-box">
+        <h2 class="fw-normal">IT OUTSOURCING</h2>
+       
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+    
+
+<section id="contactos" class="py-5">
+  <div class="container">
+    <h1 class="text-center mb-5">CONTACTO</h1>
+
+    
+    <div class="row text-center mb-5">
+      <div class="col-sm-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          
+          <h2 class="fw-bold mt-3">Dirección</h2>
+          <p>Pitiantuta 173 casi Avda. Mcal. López, Asunción, Paraguay</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+          <h2 class="fw-bold mt-3">Email</h2>
+          <p>administracion@direct.com.py</p>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="p-4 border rounded shadow-sm h-100">
+  
+          <h2 class="fw-bold mt-3">Teléfonos</h2>
+          <p>(021) 200 700</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="row mt-5">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <div class="border rounded shadow-sm h-100">
+          <iframe
+            src="https://www.google.com/maps?q=Pitiantuta+173,+Asunción,+Paraguay&output=embed"
+            width="100%"
+            height="100%"
+            style="border:0; border-radius: 8px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="bg-white border rounded p-5 shadow-sm h-100">
+          <h2 class="mb-4 text-center">Envíanos un mensaje</h2>
+          <form>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="name" placeholder="Nombre y Apellido">
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" id="asunto" placeholder="Asunto">
+            </div>
+            <div class="mb-3">
+              <textarea class="form-control" id="mensaje" rows="4" placeholder="Mensaje"></textarea>
+            </div>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+    <!-- Footer -->
+    <section id="footer" class="mt-5">
+  <footer class="bg-dark text-white pt-5 pb-4">
+    <div class="container text-center text-md-start">
+      <div class="row">
+
+        <!-- Información de la empresa -->
+        <div class="col-md-3 col-lg-4 col-xl-4 mx-auto mb-4">
+          <h5 class="text-uppercase fw-bold">Direct <br> Technologies</h5>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #0d6efd; height: 2px"/>
+          <p>Pitiantuta 173 <br> Asunción, Paraguay</p>
+        </div>
+
+      
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <h5 class="text-uppercase fw-bold">Accesos</h5>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #0d6efd; height: 2px"/>
+          <p><a href="#inicio" class="text-white text-decoration-none">Inicio</a></p>
+          <p><a href="#nosotros" class="text-white text-decoration-none">Nosotros</a></p>
+          <p><a href="#servicios" class="text-white text-decoration-none">Servicios</a></p>
+          <p><a href="#contactos" class="text-white text-decoration-none">Contacto</a></p>
+        </div>
+
+        <!-- Contacto -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
+          <h5 class="text-uppercase fw-bold">Contacto</h5>
+          <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #0d6efd; height: 2px"/>
+          <p> administracion@direct.com.py</p>
+          <p> (021) 200 700</p>
+        </div>
+
+        
+      </div>
+
+     
+      <div class="text-center pt-3 border-top border-secondary mt-4">
+        <p class="mb-0">
+          &copy; 2017–2025 Direct Technologies &middot;
+          <a href="#" class="text-white text-decoration-none">Privacy</a> &middot;
+          <a href="#" class="text-white text-decoration-none">Terms</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+</section>
+
+
+    <!-- Bootstrap Bundle -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
